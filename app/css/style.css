@@ -1,0 +1,1728 @@
+html {
+    min-height:100%;
+    position:relative;
+}
+body {
+    min-height: 700px;
+}
+
+body,html {
+    min-width: 1170px;
+}
+
+.maincontainer {
+    overflow:auto;
+}
+
+.backgroundcontainer {
+    background: #ffffff;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index:-100;
+
+}
+
+.backgroundmediacontainer video {
+
+    min-width:100%;
+    min-height:100%
+}
+
+.backgroundmediacontainer {
+    width:100%;
+    height:100%;
+    overflow:hidden
+}
+
+.backgroundmediacontainer img {
+    transition: all 0s linear 0s;
+}
+
+.mejs-backgroundplayer .mejs-controls {
+    display:none !important;
+}
+
+.backgroundoverlay {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color: #ffffff;
+    visibility: hidden;
+}
+
+.mejs-backgroundplayer .mejs-container .mejs-controls,.mejs-backgroundplayer .mejs-overlay  .mejs-overlay-button {
+    display: none !important;
+}
+
+
+/*********************************************************************************************
+*   menu
+**********************************************************************************************/
+
+#menucontainer {
+    height:76px;
+    width:100%;
+    z-index: 10000;
+}
+
+#logomenucontainer {
+    float:left;
+    padding-left:36px;
+    padding-top:35px;
+}
+
+.logomodels {
+    display: none;
+}
+
+#linksmenucontainer {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 0px;
+}
+
+#linksmenucontainer .linkmenu {
+    display: inline-block;
+    font-family: berthold_akzidenz_grotesk_bMd;
+    font-size:11px;
+    color: #000000;
+    margin-top:40px;
+    margin-right:16px;
+    text-transform: uppercase;
+}
+
+#linksmenucontainer .linkmenuselected {
+    color: #ed174f;
+}
+
+#inputmenusearch {
+    vertical-align: top;
+    margin-top:35px;
+    margin-left:3px;
+    margin-right:28px;
+    padding-left:4px;
+    font-family: berthold_akzidenz_grotesk_bMd;
+    font-size:11px;
+    color: #000000;
+    text-transform: uppercase;
+    width:193px;
+    line-height:15px;
+
+}
+
+#inputmenusearch::-webkit-input-placeholder {
+    font-family: berthold_akzidenz_grotesk_bMd;
+    font-size:11px;
+    color: #000000;
+    text-transform: uppercase;
+}
+#inputmenusearch::-moz-placeholder {
+    font-family: berthold_akzidenz_grotesk_bMd;
+    font-size:11px;
+    color: #000000;
+    text-transform: uppercase;
+    opacity: 1;
+}
+#inputmenusearch:-moz-placeholder {
+    font-family: berthold_akzidenz_grotesk_bMd;
+    font-size:11px;
+    color: #000000;
+    text-transform: uppercase;
+    opacity: 1;
+}
+#inputmenusearch::-ms-input-placeholder {
+    font-family: berthold_akzidenz_grotesk_bMd;
+    font-size:11px;
+    color: #000000;
+    text-transform: uppercase;
+}	/* IE10+ */
+
+
+.searchcontentholder {
+    position:absolute;
+    display: none;
+    border:1px solid #dedede;
+    background-color: #ffffff;
+    z-index: 10000;
+
+}
+.searchitemwrapper {
+    padding-left:10px;
+    padding-right:15px;
+}
+
+.searchitemlink {
+    font-family: berthold_akzidenz_grotesk_bR;
+    font-size: 11px;
+    line-height: 18px;
+    color:#000000;
+}
+
+.searchitemlink .searchitemname {
+    color:#231f20;
+}
+
+.searchitemlink .searchitemparents {
+    color:#a7a9ac;
+}
+
+
+.searchitemlink:hover .searchitemparents,.searchitemlink:hover .searchitemname{
+    color: #ed174f;
+}
+
+#rightmenucontainer {
+    float:right;
+    font-size: 0px;
+}
+
+#socialmenucontainer {
+    margin-right:22px;
+    display:inline-block;
+    vertical-align: top;
+    margin-top:32px;
+}
+
+.socialiconsmenu {
+    width:27px;
+    height:27px;
+    margin-right:6px;
+    cursor: pointer;
+    display: block;
+    float:left;
+    vertical-align: top;
+}
+
+.socialiconsmenu a {
+    display:block;
+    width:27px;
+    height:27px;
+}
+
+#facebooksociallink {
+    background-image: url("/images/03_facebook.svg");
+}
+
+#facebooksociallink:hover {
+    background-image: url("/images/03_facebook_rollover.svg");
+}
+
+#instagramsociallink {
+    background-image: url("/images/01_insta.svg");
+}
+
+#instagramsociallink:hover {
+    background-image: url("/images/01_insta_rollover.svg");
+}
+
+#twittersociallink {
+    background-image: url("/images/02_twitter.svg");
+}
+
+#twittersociallink:hover {
+    background-image: url("/images/02_twitter_rollover.svg");
+}
+
+
+
+/*********************************************************************************************
+*   intro
+**********************************************************************************************/
+
+.introcontainer {
+    display:none;
+    margin-right:35px;
+}
+
+.introlinksholder {
+    margin-bottom:28px;
+}
+.mainname,.introsubsectionname {
+    cursor: pointer;
+}
+.mainname:hover  .mainnamelink{
+    color:#ed174f;
+}
+
+.introsubsectionname:hover  .introsubsectionnamelink{
+    color:#ed174f;
+}
+
+.mainnamelink,.mainnamelinkdisabled,.introsubsectionnamelink,.profilemainnamelink,.modelscategorymainnamelink {
+    font-family: berthold_akzidenz_grotesk_bS;
+    font-size: 72px;
+    line-height: 58px;
+    color: #000000;
+    text-transform: uppercase;
+    display:inline-block;
+
+
+}
+
+
+
+.mainnamelink span,.mainnamelinkdisabled span,.introsubsectionnamelink span,.profilemainnamelink span {
+    display: inline-block;
+}
+
+.mainnamelink img,.mainnamelinkdisabled img{
+    vertical-align: middle;
+    margin-left:11px;
+    margin-right:13px;
+    margin-top:-10px;
+    transition: all 1s ease;
+}
+
+.mainnamelinkdisabled img {
+    /*transform: rotate(90deg);*/
+}
+
+.mainnamelink:hover,.introsubsectionnamelink:hover,.profilemainnamelink:hover {
+    color: #ed174f;
+}
+
+.mainnametext,.profilemainnametext {
+    font-family: berthold_akzidenz_grotesk_bR;
+    font-size: 16px;
+    color: #000000;
+    margin-left: 35px;
+    text-transform: uppercase;
+    letter-spacing: -0.1px;
+    display:none;
+    padding-bottom:22px;
+    padding-top:3px;
+}
+
+.mainnametext {
+    margin-left: 39px;
+}
+
+.mainnametextlinks {
+    font-size: 0px;
+}
+.introsubsectionscontainer {
+    margin-left:92px;
+    display:none;
+    margin-top:5px;
+    margin-bottom: 30px;
+}
+
+.introsubsectionnamelink {
+    overflow: hidden;
+}
+
+.introsubsectionlinks {
+    display:none;
+    margin-top:4px;
+    margin-bottom: 10px;
+    font-size: 0;
+    margin-left:3px;
+}
+
+.introsubsectionslinks,.profileintrosubsectionslinks {
+    font-family: berthold_akzidenz_grotesk_bS;
+    font-size: 12px;
+    line-height: 18px;
+    color: #000000;
+    margin-right:14px;
+    display: inline-block;
+}
+
+.introsubsectionslinks:hover,.profileintrosubsectionslinks:hover {
+    color: #ed174f;
+}
+
+
+/*********************************************************************************************
+*   intro profile
+**********************************************************************************************/
+
+
+.profilemainlinkcontainer {
+
+}
+.profilemainnamelink {
+    margin-left:35px;
+    overflow:hidden;
+}
+
+.profilemainnametext {
+    padding-top:5px;
+    padding-bottom:9px;
+    font-size: 0px;
+}
+
+
+
+.containershowmoreprofessionals {
+    float:left;
+    width:0px;
+    margin-left:0px;
+}
+
+.bioprofilecontainer {
+}
+.bioprofileimagecontainer {
+    float:left;
+    margin-left:35px;
+}
+
+.bioprofiletextcontainer {
+
+    float:left;
+    border-top:10px #231f20 solid;
+    border-bottom:10px #231f20 solid;
+    padding:25px 0;
+
+    width:470px;
+
+    font-family: berthold_akzidenz_grotesk_bR;
+    font-size: 12px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color:#231f20;
+
+    margin-left:35px;
+}
+
+.bioprofilecontainerscrollable {
+    overflow:hidden;
+    height:100%;
+}
+
+.bioprofiletextcontent ul {
+    list-style-type: disc;
+    list-style-position: inside;
+}
+.bioprofiletextcontent li {
+    list-style-position: outside;
+    list-style-image: url("/images/_ studio_list_bullet.svg");
+    padding-top:10px;
+    padding-bottom:10px;
+    margin-left:20px;
+
+    text-align:left;
+}
+
+.bioprofiletextcontent a {
+    font-family: berthold_akzidenz_grotesk_bS;
+    color: #000000;
+}
+.bioprofiletextcontent a:hover {
+    color: #ed174f;
+}
+
+.mCS-verticalarrows .mCSB_scrollTools .mCSB_buttonUp,.mCS-verticalarrows .mCSB_scrollTools .mCSB_buttonUp:hover {
+    background: url("/images/10_bio_scroll_arrow_1.svg") 0 0 no-repeat;
+    width:35px;
+    height:15px;
+    opacity:1;
+}
+
+.mCS-verticalarrows .mCSB_scrollTools .mCSB_buttonDown,.mCS-verticalarrows .mCSB_scrollTools .mCSB_buttonDown:hover {
+    background: url("/images/11_bio_scroll_arrow_2.svg") 0 0 no-repeat;
+    width:35px;
+    height:15px;
+    opacity:1;
+}
+
+.mCS-verticalarrows .mCSB_scrollTools .mCSB_draggerContainer {
+    visibility: hidden;
+}
+
+.mCS-verticalarrows .mCSB_inside > .mCSB_container {
+    margin-right:35px;
+}
+
+.mCS-verticalarrows .mCSB_scrollTools_vertical {
+    width:35px;
+}
+
+.videoshareiframe {
+    width:100%;
+    height: 100%;
+}
+
+/*****************
+* portfolio
+*********************/
+
+.professionalcontainer,.profileintrocontainer {
+    display: none;
+}
+
+.profileintrocontainer {
+    overflow-x:hidden;
+}
+
+.portfoliolayoutmenucontainer {
+    margin-left:35px;
+    margin-top:4px;
+    margin-bottom:11px;
+    font-size:0px;
+}
+
+
+.portfoliomenuitem {
+    display:inline-block;
+    font-family: berthold_akzidenz_grotesk_bS;
+    font-size: 12px;
+    line-height:18px;
+    margin-right:14px;
+    text-transform: uppercase;
+    color:#bcbec0;
+    vertical-align: middle;
+}
+
+.portfoliomenuitemselected {
+    color:#ed174f;
+}
+
+.portfoliomenuitem:hover {
+    color:#ed174f;
+}
+
+.profileinfoholder {
+    width:3000px;
+    overflow: hidden;
+}
+
+.moreprofessionals {
+    margin-left:35px;
+    margin-top:9px;
+    margin-bottom:12px;
+    vertical-align: middle;
+}
+#profilemorebutton {
+    color:#000000;
+    text-transform: uppercase;
+    font-family: berthold_akzidenz_grotesk_bS;
+    font-size: 12px;
+    line-height: 18px;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+#profilemorebutton:hover {
+    color: #ed174f;
+}
+
+#profilemorebutton span {
+    vertical-align: middle;
+}
+#profilemorebutton img {
+    vertical-align: middle;
+    transition: all 1s ease;
+}
+
+img.rotateDown {
+    transform: rotate(90deg);
+}
+
+.otherprofessionallink {
+    color:#000000;
+    font-family: berthold_akzidenz_grotesk_bS;
+    font-size: 12px;
+    line-height: 18px;
+    text-decoration: none;
+    text-transform: uppercase;
+
+}
+
+.otherprofessionallink:hover {
+    color: #ed174f;
+}
+
+.showmoreprofessionals {
+    margin-left:35px;
+
+    display:none;
+}
+
+.menuseparator {
+    margin-left:-14px;
+    vertical-align: middle;
+    margin-bottom:2px;
+}
+
+.seemoreprofessionals {
+    color: #000000;
+    font-family: berthold_akzidenz_grotesk_bS;
+    font-size: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+
+.seemoreprofessionalscontainer {
+    display:none;
+    position:absolute;
+    background-color: #ffffff;
+    padding-left:10px;
+    padding-right:10px;
+    padding-bottom:10px;
+}
+
+.seemoreprofessionalsoverlay {
+    display:none;
+    position: absolute;
+    background-color: #ffffff;
+    opacity: 0.7;
+}
+
+/******************************************
+* portfolio gallery
+************************************************/
+
+.mainportfoliocontainer {
+    display:none;
+}
+
+.portfoliothumbnailscontainerscrollable {
+    overflow:hidden;
+    height:52px;
+}
+
+.portfoliothumbnailscontainer {
+
+}
+
+.thumbnailcontainer {
+    display:inline-block;
+    margin-right:1px;
+    line-height:1px;
+}
+
+.thumbnailcontainerbackground {
+    background-color: #ed174f;
+}
+
+.thumbnailimage {
+    display: none;
+    cursor: pointer;
+}
+
+.thumbnailsseparator {
+    width:35px;
+    height:52px;
+    display: inline-block;
+}
+
+
+.portfolioimagecontrols {
+    width:35px;
+    float:left;
+}
+
+.portfolioimagecontainer {
+    float:left;
+    position:relative;
+    width:calc(100% - 37px);
+}
+
+.portfoliothumbnailselected {
+    opacity:0.5;
+}
+
+.portfoliothumbnailover {
+    opacity:0.5;
+}
+
+#previousimagecontrolcontainer,#nextimagecontrolcontainer {
+    position:relative;
+}
+
+.imagecontrols {
+    cursor:pointer;
+}
+
+.imagecontrolsdisabled{
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    background-color: #ffffff;
+    opacity: 0.7;
+    display: none;
+}
+
+.portfoliocontentcontent {
+    position:absolute;
+    top:0px;
+    left:0px;
+
+    width:100%;
+    height:100%;
+    margin-bottom: 28px;
+}
+
+.imageportfoliobig {
+    display:none;
+    max-height: 100%;
+    height:auto;
+    width:auto;
+    max-width:100%;
+    opacity:0;
+    width:auto;
+}
+
+.portfolioimagedisplaycontainer {
+    margin-top:10px;
+    overflow:hidden;
+}
+
+.captioninnercontent {
+    margin-top:16px;
+    font-family: berthold_akzidenz_grotesk_bR;
+    font-size: 9px;
+    line-height: 14px;
+    color: #95979a;
+    text-transform: uppercase;
+}
+
+/******************************8
+* gallery
+************************************/
+
+.portfoliomaingalleryscrollable {
+
+}
+
+.portfoliomaingallerycontainer {
+    padding-left:35px;
+}
+
+.maingalleryimagecontainer {
+    float:left;
+    margin-right: 12px;
+}
+
+
+.galleryimage {
+    max-height: 100%;
+    max-width: 100%;
+    width:auto;
+    height:auto;
+    display:none;
+}
+
+.innercontent {
+    display:block;
+}
+
+/****************************************
+* cutom scroll
+************************************/
+
+.mCS-my-theme .mCSB_scrollTools.mCSB_scrollTools_horizontal {
+    left:35px;
+    right:35px;
+}
+.mCS-my-theme .mCSB_horizontal.mCSB_inside > .mCSB_container {
+
+}
+
+.mCS-my-theme .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_draggerRail {
+    margin:0px;
+    height:10px;
+    background-color:#eaeaea;
+
+
+}
+
+.mCS-my-theme .mCSB_scrollTools .mCSB_draggerRail {
+    border-radius: 0px;
+}
+
+.mCS-my-theme .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_dragger {
+    height:10px;
+    background-color:#000000;
+    width:120px;
+}
+
+.mCS-my-theme .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar {
+    height:10px;
+    background-color:#000000;
+    margin:0px;
+    width:120px;
+}
+
+.mCS-my-theme .mCSB_scrollTools.mCSB_scrollTools_horizontal {
+    height:10px;
+}
+
+/**************************************
+* profile prof
+***************************************/
+
+.profilecontainer {
+    margin-left:35px;
+    margin-top:23px;
+    margin-right:35px;
+}
+.imageprofile {
+    margin-bottom:15px;
+}
+
+.imageprofile img {
+    display:block;
+    opacity: 0;
+}
+
+.contentprofile {
+    font-family: berthold_akzidenz_grotesk_bR;
+    color: #808285;
+    font-size: 14px;
+    line-height: 19px;
+    max-width:1000px;
+    margin-bottom:28px;
+}
+
+.contentprofile strong,.contentprofile b{
+    font-family: berthold_akzidenz_grotesk_bB;
+    font-size: 15px;
+    line-height: 19px;
+    color: #000000;
+}
+
+/********************************************************8
+* models category
+**********************************************************/
+
+.modelscategorycontainer {
+    display:none;
+}
+
+.modelscategorymainnamelink {
+    margin-left: 35px;
+    overflow: hidden;
+}
+
+
+.modelscategorylayoutmenucontainer {
+    margin-bottom: 5px;
+    margin-left: 35px;
+    margin-top: 4px;
+    font-size: 0;
+}
+
+
+.modelscategorymenuitem {
+    color: #000000;
+    display: inline-block;
+    font-family: berthold_akzidenz_grotesk_bS;
+    font-size: 12px;
+    line-height: 18px;
+    margin-right: 14px;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+
+.modelscategorymenuitem:hover {
+    color:#ed174f;
+}
+
+.modelscategorymenuitemselected {
+    color: #ed174f;
+}
+
+/*********************************************************8
+* models gallery
+********************************************************/
+
+.maincategorycontainer {
+    display:none;
+}
+
+.modelscategorysectincontainer {
+    margin-left:35px;
+    margin-right: 23px;
+    z-index:99;
+}
+.modellistcontainer {
+    width:214px;
+    height:320px;
+    margin-right:12px;
+    float:left;
+}
+
+.containermodelimage {
+    max-width:214px;
+    max-height:270px;
+    background-color: #ebebeb;
+    display: inline-block;
+}
+
+.containermodelimagewrap {
+    width:214px;
+    height:270px;
+    display: inline-block;
+}
+
+.containermodelimageloaded {
+    background-color: #ed174f;
+}
+
+.modelimage {
+    max-width:214px;
+    max-height:270px;
+    cursor: pointer;
+    display: none;
+}
+
+.modelimageover {
+    opacity:0.5;
+}
+
+.containermodelname {
+    font-family: berthold_akzidenz_grotesk_bB;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+    text-transform: uppercase;
+    padding-top:6px
+}
+
+.containermodelname a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.containermodelname a:hover {
+    color: #ed174f;
+}
+
+.modelscategorytop {
+    background-color: #ffffff;
+    position:fixed;
+    width:100%;
+    z-index: 100;
+}
+
+.modelportfoliocontainer {
+    position:relative;
+}
+
+/******************************************************8
+* model page
+**********************************************************/
+
+.modelspagecontainer {
+    display:none;
+}
+
+.modelpagetop {
+    width: 100%;
+}
+
+
+.modelpagelayoutmenucontainer {
+    margin-bottom: 11px;
+    margin-left: 35px;
+    margin-top: 4px;
+    font-size:0;
+}
+
+.modelpagemenuitem {
+    color: #bcbec0;
+    display: inline-block;
+    font-family: berthold_akzidenz_grotesk_bS;
+    font-size: 12px;
+    line-height: 18px;
+    margin-right: 14px;
+    text-transform: uppercase;
+    vertical-align:middle;
+}
+
+.modelpagemenuitem:hover {
+    color:#ed174f;
+}
+
+.modelpagemenuitemselected {
+    color: #ed174f;
+}
+
+.modelpagemenuitemlinks {
+    color:#000000;
+}
+
+
+/***********************************************************8
+* model gallery
+**************************************************************/
+
+.modelcaption {
+    float:left;
+    margin-top:8px;
+
+    position:absolute;
+    left:35px;
+    /*bottom:45px;*/
+
+}
+
+
+.modelinterviewtextcontainer {
+    float:left;
+    margin-left: 23px;
+    margin-right:35px;
+    border-top:10px #231f20 solid;
+    border-bottom:10px #231f20 solid;
+    padding:25px 0;
+
+    width:470px;
+
+    font-family: berthold_akzidenz_grotesk_bR;
+    font-size: 12px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color:#231f20;
+
+}
+
+.modelinterviewcontainerscrollable {
+    overflow:hidden;
+    height:100%;
+}
+
+.modelinterviewtextcontent ul {
+    list-style-type: disc;
+    list-style-position: inside;
+}
+.modelinterviewtextcontent li {
+    list-style-position: inside;
+    list-style-type: disc;
+    padding-top:10px;
+    padding-bottom:10px;
+    margin-left:20px;
+    text-align:left;
+}
+
+.modelinterviewtextcontent strong,.modelinterviewtextcontent b {
+    font-family: berthold_akzidenz_grotesk_bS;
+    font-size: 14px;
+    line-height: 18px;
+    color:#000000;
+}
+
+.modelinfocontainer {
+    font-size: 0px;
+    vertical-align: top;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.modelcaptionelement {
+    font-family: berthold_akzidenz_grotesk_bR;
+    font-size: 12px;
+    line-height: 12px;
+    color:#808285;
+    text-transform: uppercase;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.modelscaptionline {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.compcard {
+    font-family: berthold_akzidenz_grotesk_bS;
+    font-size: 12px;
+    line-height: 12px;
+    text-transform: uppercase;
+    color:#000000;
+    vertical-align: top;
+    display: inline-block;
+    margin-right:21px;
+    margin-top:5px;
+
+}
+
+.compcard:hover {
+    color: #ed174f;
+}
+
+.instaelem {
+    vertical-align: top;
+    display: inline-block;
+    margin-right:21px;
+    outline: none;
+}
+
+
+    /************************************************************
+    * model search
+    ***************************************************************/
+
+
+.searchmodelsleft {
+    margin-right:35px;
+    width:240px;
+    padding-right:21px;
+    border-right:1px solid #c5c3c3;
+    position:fixed;
+    left:35px;
+}
+
+.searchinput{
+    height:25px;
+    width:220px;
+    margin-bottom: 4px;
+    background-color: #f8f8f8;
+    border:none;
+    padding:0px;
+    padding-left:20px;
+}
+
+.searchinput::-webkit-input-placeholder {
+    color: #bcbec0;
+    font-family: berthold_akzidenz_grotesk_bB;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.searchinput::-moz-placeholder {
+    color: #bcbec0;
+    font-family: berthold_akzidenz_grotesk_bB;
+    font-size: 14px;
+    text-transform: uppercase;
+    opacity: 1;
+}
+.searchinput:-moz-placeholder {
+    color: #bcbec0;
+    font-family: berthold_akzidenz_grotesk_bB;
+    font-size: 14px;
+    text-transform: uppercase;
+    opacity: 1;
+}
+.searchinput::-ms-input-placeholder {
+    color: #bcbec0;
+    font-family: berthold_akzidenz_grotesk_bB;
+    font-size: 14px;
+    text-transform: uppercase;
+}	/* IE10+ */
+
+
+.searchinput {
+    font-family: berthold_akzidenz_grotesk_bB;
+    font-size: 14px;
+    text-transform: uppercase;
+    color:#231f20;
+}
+
+
+.mainsearchlink {
+    font-family: berthold_akzidenz_grotesk_bB;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #bcbec0;
+    line-height:25px;
+    height:25px;
+    display: inline-block;
+    width:220px;
+    height:25px;
+    background: #f8f8f8 url("/images/04_menu_small_arrow.svg") no-repeat 0.5% 50%;
+    padding-left:20px;
+}
+
+.mainsearchlinkselected {
+    color:#231f20;
+}
+
+.dropit .dropit-open .dropit-submenu {
+    border-radius: 0px;
+    background: #dedede;
+    border:none;
+    width:240px;
+    max-height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.searchdropdown {
+    margin-bottom: 4px;
+}
+.searchdropdown ul.dropit-submenu a {
+    width:220px;
+    padding-left: 20px;
+    font-family: berthold_akzidenz_grotesk_bB;
+    font-size: 14px;
+    text-transform: uppercase;
+    color:#231f20;
+    padding-right:0px;
+
+}
+
+.searchdropdown ul.dropit-submenu a:hover {
+    color:#231f20;
+    background: #dedede;
+}
+
+.searchmodelsright {
+    margin-left:283px;
+}
+
+/*********************************************************
+* become a model
+********************************************************/
+
+
+.pagecontainer {
+    display:none;
+}
+.becomeimagecontainer {
+    max-width: 450px;
+    max-height:800px;
+    float:left;
+    margin-left:35px;
+}
+
+
+.becomeimageinner {
+    max-width:100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+#becomeamodelcontent {
+    margin-top:35px;
+    overflow: hidden;
+    margin-bottom: 28px;
+}
+
+.becomeformcontainer {
+    float:left;
+    margin-left:35px;
+    font-size:0px;
+    margin-top:-3px;
+}
+
+.formbecomemodellegend {
+    font-family: berthold_akzidenz_grotesk_bL;
+    color:#797979;
+    font-size: 9px;
+    line-height: 15px;
+
+    text-transform: uppercase;
+}
+
+.formbecomemodellegenderror {
+    color:#ed174f;
+}
+
+.leftformbecomemodel,.rightformbecomemodel {
+    float:left;
+    width:275px;
+}
+
+.leftformbecomemodel {
+    margin-right:24px;
+}
+
+.inputclass {
+    border:1px solid #dedede;
+    font-family: berthold_akzidenz_grotesk_bR;
+    color:#797979;
+    font-size: 9px;
+    width:271px;
+    margin-bottom:6px;
+    line-height:15px;
+
+}
+
+.becomeimageinner {
+    display:none;
+}
+
+.wheredidyoufindlabel {
+    margin-top:40px;
+}
+
+.requirementstextcontainer {
+    margin-top:33px;
+    margin-bottom: 40px;
+}
+
+.becomeamodelline {
+    border-top:1px solid #dedede;
+    height:1px;
+}
+
+.becomemodellinks {
+    font-family: berthold_akzidenz_grotesk_bS;
+    font-size: 12px;
+    line-height: 18px;
+    color:#000000;
+    text-transform: uppercase;
+}
+
+.becomemodellinks:hover {
+    color: #ed174f;
+}
+
+.becomemodellinkscontainer {
+    margin-top:20px;
+    font-size:0px;
+}
+
+.attachphotolinkscontainer {
+    margin-top:17px;
+}
+
+.sendformlinkscontainer {
+    margin-top:13px;
+}
+
+#attachphoto {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right:10px;
+}
+
+.imagenameholder {
+    display:inline-block;
+    vertical-align: middle;
+    font-size: 12px;
+    line-height: 15px;
+    font-family: berthold_akzidenz_grotesk_bL;
+    color:#797979;
+}
+
+#fileupload {
+    display:none;
+}
+
+.confirmmessagesend {
+    color: #797979;
+    font-family: berthold_akzidenz_grotesk_bL;
+    font-size: 9px;
+    line-height: 15px;
+    text-transform: uppercase;
+}
+
+/********************************************************
+* international
+******************************************************/
+
+#internationalcontent {
+    margin-left: 35px;
+    margin-right: 35px;
+    margin-top:30px;
+    margin-bottom:0px;
+    font-size:0px;
+}
+
+.containermodelnameinternational {
+    font-family: berthold_akzidenz_grotesk_bR;
+    color:#000000;
+    font-size: 12px;
+    line-height:18px;
+    text-transform: uppercase;
+}
+
+.containermodelnameinternational span {
+    display:block;
+    color:#ed174f;
+    margin-top:12px;
+    margin-bottom:5px;
+}
+
+.modellistcontainerinternational {
+    height:auto;
+    float:none;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom:28px;
+}
+
+/********************************************************
+* special occasion
+******************************************************/
+
+#specialoccasioncontent {
+    margin-left: 35px;
+    margin-right: 35px;
+    margin-bottom:28px;
+}
+
+.specialoccasionmainlink {
+    display:block;
+}
+
+.specialoccasiontext {
+    margin:30px 35px 22px 35px;
+    font-family: berthold_akzidenz_grotesk_bL;
+    font-size: 12px;
+    color:#58595b;
+}
+
+/********************************************************
+* contact
+********************************************************/
+#contactcontent {
+    margin-bottom:28px;
+}
+
+.contactmainlink {
+    display:block;
+}
+.contactfirsttext {
+    margin-top:56px;
+    margin-left:35px;
+    margin-right:35px;
+    max-width: 1000px;
+}
+
+.contacttextscontainer {
+    font-size: 0px;
+}
+
+.contactfirsttext {
+    font-family: berthold_akzidenz_grotesk_bR;
+    font-size: 14px;
+    line-height: 19px;
+    color:#808285;
+    text-decoration: none;
+}
+
+.contacttextwrapper {
+    font-family: berthold_akzidenz_grotesk_bR;
+    font-size: 14px;
+    line-height: 19px;
+    color:#808285;
+    text-decoration: none;
+}
+
+.contactfirsttext a,.contacttextscontainer a {
+    text-decoration: none;
+    color: #ed174f;
+}
+
+.contacttextscontainer {
+    margin-left:35px;
+    margin-top:-4px;
+}
+
+.contacttextwrapper {
+    display:inline-block;
+    vertical-align: top;
+    width:250px;
+    margin-right: 35px;
+    margin-top:45px;
+}
+
+.facebooklikecontainer {
+    margin-left:35px;
+    margin-top:45px;
+}
+
+/**************************************************
+* press main
+*********************************************/
+
+.portfoliomaingallerycontainer {
+    position:relative;
+
+}
+.mainpressimagecontainer {
+    position:absolute;
+    width:200px;
+    height:200px;
+    background-color: #000000;
+}
+
+.pressgalleryimage {
+    position:absolute;
+    width:200px;
+    height:200px;
+    cursor: pointer;
+    display:none;
+}
+
+.mainpressrollover {
+    position:absolute;
+    width:176px;
+    height:176px;
+    top:12px;
+    left:14px;
+
+    line-height: 176px;
+    font-family: berthold_akzidenz_grotesk_bR;
+
+
+    color:#ffffff;
+    text-align: center;
+    cursor: pointer;
+    display:none;
+}
+
+.mainpressrollover span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 14px;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.mainpressimagecontainer:hover .pressgalleryimage {
+    opacity:0.7;
+}
+
+.mainpressimagecontainer:hover .mainpressrollover{
+    display: block;
+}
+
+
+/*****************************************************
+* press gallery
+*******************************************************/
+
+.pressgalleryimagecontainer {
+    position:relative;
+}
+
+.pressgalleryoverlay {
+    position:absolute;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    display:none;
+    cursor: pointer;
+}
+
+.pressgalleryimagecontainer:hover .pressgalleryoverlay {
+    display: block;
+}
+
+.overlayzoom {
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    height:33px;
+    background-color: #000000;
+    color:#ffffff;
+    font-family: GothamMedium;
+    font-size: 10px;
+    line-height: 33px;
+    text-transform: uppercase;
+    text-align: right;
+    padding-right:21px;
+}
+
+/******************************************************************************8
+* zoom viewer
+*******************************************************************************/
+
+.zoomviewercontainer {
+    position:fixed;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    background-color: #ffffff;
+
+}
+
+.arrownormal,.arrowrollover {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.arrowrollover {
+    display:none;
+}
+
+.zoomviewerarrow {
+    position:absolute;
+    top:0px;
+    bottom:0px;
+    width:100px;
+    cursor: pointer;
+}
+
+.zoomviewerarrow:before {    /* create a full-height inline block pseudo=element */
+    content: ' ';
+    display: inline-block;
+    vertical-align: middle;  /* vertical alignment of the inline element */
+    height: 100%;
+}
+
+.zoomviewerarrowleft {
+    left:0px;
+}
+
+.zoomviewerarrowright {
+    right:0px;
+}
+
+.zoomviewerclosecontainer {
+    position:absolute;
+    right:0px;
+    top:0px;
+    cursor:pointer;
+    width:100px;
+    height:100px;
+}
+
+.zoomclosenormal,.zoomcloserollover {
+    display:block;
+    float:right;
+    margin-right:30px;
+    margin-top:30px;
+}
+
+.zoomcloserollover {
+    display: none;
+}
+
+.zoomviewerclosecontainer:hover .zoomcloserollover {
+    display: block;
+}
+
+.zoomviewerclosecontainer:hover .zoomclosenormal {
+    display: none;
+}
+
+.zoomviewerarrow:hover .arrowrollover {
+    display:inline-block;
+}
+
+.zoomviewerarrow:hover .arrownormal {
+    display:none;
+}
+
+.zoomviewercontentcontainer {
+    position:absolute;
+    top:20px;
+    bottom:20px;
+    left:100px;
+    right:100px;
+}
+
+.imagezoomviewerbig {
+    width:100%;
+    height:100%;
+    opacity:0;
+}
+
+.zoomviewercontentholder {
+    position:absolute;
+}
+
+.zoomviewercontentholder:hover .pressgalleryoverlay {
+    display:block;
+}
+
+/**********************************************************
+* press text section
+**********************************************************/
+
+.presstextcolumn {
+    width:400px;
+    margin-left:35px;
+    float:left;
+    overflow:hidden;
+    margin-top:-3px;
+}
+
+.presstextblock {
+    width:400px;
+    font-family: berthold_akzidenz_grotesk_bL;
+    font-size: 14px;
+    line-height: 19px;
+    color:#808285;
+    margin-bottom:25px;
+}
+
+.presstextblock a,.pressmainposttextcontainer a {
+    color: #231f20;
+}
+
+.presstextblock a:hover,.pressmainposttextcontainer:hover {
+    color:#ed174f;
+}
+
+.presstextblock strong,.pressmainposttextcontainer strong {
+    color: #231f20;
+}
+
+.presstextblock img,.pressmainposttextcontainer img {
+    max-width:100%;
+}
+
+#presstextblock0 {
+    font-size: 14px;
+    line-height:20px;
+    color:#231f20;
+    font-family: berthold_akzidenz_grotesk_bB;
+}
+
+/*
+.pressmainposttextscrollable {
+    overflow-x: auto;
+}
+
+.pressmainposttextcontainer {
+    -webkit-column-width: 400px;
+    -moz-column-width: 400px;
+    column-width: 400px;
+
+    column-gap: 35px;
+    -moz-column-gap: 35px;
+    -webkit-column-gap: 35px;
+
+    column-fill: auto;
+    -moz-column-fill: auto;
+
+    margin-left:35px;
+    padding-right:35px;
+}
+*/
+
+
+.ihousecontainer {
+    cursor:pointer;
+    position:absolute;
+    bottom:28px;
+    right:35px;
+    width: 14px;
+    height: 15px;
+    overflow:hidden;
+}
+
+.ihouselink {
+    position:absolute;
+    top:0px;
+    right:23px;
+}
+
+.ihouseimage {
+    position:absolute;
+    top:0px;
+    right:0px;
+}
+
+.imagefooddrinkgallery {
+    width:100%;
+}
+
+.showonfd {
+    display:none;
+}
+
+.mejs-poster .posterimage {
+    padding: 0;
+    border: 0;
+    width: 100%;
+    height: 100%;
+    display: inline;
+}
+

@@ -1,0 +1,16 @@
+<?php
+use Application\Infrastructure\Utils\Display;
+
+$this->headTitle()->append(Display::formatString($this->title));
+
+?>
+
+<?php foreach ($this->content as $content)
+    {?>
+        <a href="<?php echo $content['slug'];?>">
+
+            <img src="<?php echo $content['imagepath'];?>" />
+            <?php echo $content['name'];?>
+        </a>
+    <?php
+}?>

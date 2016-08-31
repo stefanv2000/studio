@@ -1,0 +1,71 @@
+<div class="portfoliolayoutcontainer">
+    <div class="portfoliotop">
+        <div class="portfoliomaintitle" id="portfoliomaintitle">
+            <a href="#" class="profilemainnamelink" id="profilemainnamelink<%-con[0].id%>">
+                <span><%-con[0].name%></span>
+            </a>
+        </div>
+        <div class="portfoliolayoutmenucontainer">
+            <% for (var i=1; i< con.length;i++){
+            var menuelem = con[i];
+            var slug = path+'/'+menuelem.slug;
+            var hasSubsections = false;
+            var menutype="";
+            if ((menuelem.slug == "portfolio")||(menuelem.slug=="videos")) {
+                menutype="gallery";
+                if (menuelem.description1 == '2') menutype = "portfolio_old";
+            }
+            if (menuelem.slug == 'profile') menutype="profile";
+            if (menuelem.slug == 'press') {
+                menutype="press_gallery";
+                if (menuelem.description1 == '2') menutype = "press_old";
+            }
+            if (menuelem.slug == 'social') {
+                menutype = "social";
+                slug=menuelem.link;
+            }
+            if ((menuelem.hasOwnProperty('subsections'))&&(menuelem.subsections.length>0)) hasSubsections = true;
+            if (hasSubsections) {
+                for (var k=0;k< menuelem.subsections.length;k++) {
+                var submenuelem = menuelem.subsections[k];
+                var submenutype="";
+                if ((menuelem.slug == "portfolio")||(menuelem.slug=="videos")) {
+                submenutype="gallery";
+                if (submenuelem.description1 == '2') submenutype = "portfolio_old";
+                }
+                %>
+                <a href="<%-slug%>/<%-submenuelem.slug%>" data-type="<%-submenutype%>" data-slug="<%-slug%>/<%-submenuelem.slug%>" data-id="<%-submenuelem.id%>" class="portfoliomenuitem" id="portfoliomenuitem<%-submenuelem.id%>"><span><%-submenuelem.name%></span></a>
+                <% }
+            } else { %>
+            <a href="<%-slug%>" data-slug="<%-slug%>" data-id="<%-menuelem.id%>" data-type="<%-menutype%>" class="portfoliomenuitem" id="portfoliomenuitem<%-menuelem.id%>"><span><%-menuelem.name%></span></a>
+            <% } %>
+
+            <% } %>
+            <% if (more.length>0) {%>
+            <img src="/images/05_portfolio_menu_line.png" class="menuseparator"/>
+            <a href="#" class="seemoreprofessionals" id="seemoreprofessionals">see more <%-type%></a>
+
+            <% } %>
+
+
+            <img src="/images/05_portfolio_menu_line.png" class="menuseparator showonfd" style="margin-left:0px;"/>
+            <a href="javascript:history.go(-1)" class="seemoreprofessionals showonfd" id="backbutton" >back</a>
+            </div>
+    </div>
+
+    <div class="portfoliosectincontainer" id="portfoliosectincontainer">
+        </div>
+</div>
+<div class="seemoreprofessionalsoverlay"></div>
+
+<% if (more.length>0) {%>
+<div class="seemoreprofessionalscontainer">
+    <% for (var i=0; i< more.length;i++){
+    var elemMore = more[i];
+    %>
+    <div class="otherprofessional">
+        <a href="/<%-elemMore.path%>/<%-elemMore.slug%>" class="otherprofessionallink"><%-elemMore.name%></a>
+    </div>
+    <% } %>
+</div>
+<% } %>

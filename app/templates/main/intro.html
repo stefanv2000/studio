@@ -1,0 +1,51 @@
+<div class="introlinksholder">
+
+<% for (var i=0; i< con.length;i++){
+    var mainelem = con[i];
+    %>
+    <div class="intromainlinkcontainer" id="intromainlinkcontainer<%-mainelem.id%>">
+        <div class="mainname" id="mainname<%-mainelem.id%>" data-id="<%-mainelem.id%>" data-slug="/<%-mainelem.slug%>">
+            <a href="#" data-slug="/<%-mainelem.slug%>" data-id="<%-mainelem.id%>" class="mainnamelink" id="mainnamelink<%-mainelem.id%>">
+                <img src="/images/04_menu_small_arrow.svg" /><span class="kerningtest"><%-mainelem.name%></span>
+            </a>
+            <% if (mainelem.text!='') { %>
+            <div class="mainnametext" id="mainnametext<%-mainelem.id%>">
+                <%-mainelem.text%>
+            </div>
+            <% } else
+            if ((mainelem.name.toLowerCase().startsWith('food&drin'))||(mainelem.name.toLowerCase().startsWith('food & drin'))||(mainelem.name.toLowerCase().startsWith('influencer'))){%>
+            <div class="mainnametext mainnametextlinks" id="mainnametext<%-mainelem.id%>">
+                <% for (var k=0;k< mainelem.subsections.length;k++) {
+                var sublink = mainelem.subsections[k];
+                %>
+                <a href="/<%-mainelem.slug%>/<%-sublink.slug%>" data-slug="<%-mainelem.slug%>/<%-sublink.slug%>" class="introsubsectionslinks" id="introsubsectionslinks<%-sublink.id%>" ><%-sublink.name%></a>
+                <% } %>
+            </div>
+            <% } %>
+        </div>
+        <% if ((mainelem.hasOwnProperty('subsections'))&&(mainelem.subsections.length>0)&&(!mainelem.name.toLowerCase().startsWith('food & drin'))&&(!mainelem.name.toLowerCase().startsWith('influencer'))) { %>
+            <div class="introsubsectionscontainer" id="introsubsectionscontainer<%-mainelem.id%>">
+                <% for (var j=0;j< mainelem.subsections.length;j++) {
+                    var mainsubelem = mainelem.subsections[j];
+                    %>
+                <div class="introsubsectionname" id="introsubsectionname<%-mainsubelem.id%>" data-id="<%-mainsubelem.id%>">
+                    <a href="#" data-id="<%-mainsubelem.id%>" class="introsubsectionnamelink" id="introsubsectionnamelink<%-mainsubelem.id%>">
+                        <span><%-mainsubelem.name%></span>
+                    </a>
+                    <% if ((mainsubelem.hasOwnProperty('subsections'))&&(mainsubelem.subsections.length>0)) { %>
+                    <div class="introsubsectionlinks" id="introsubsectionlinks<%-mainsubelem.id%>" data-id="<%-mainsubelem.id%>">
+                        <% for (var k=0;k< mainsubelem.subsections.length;k++) {
+                        var sublink = mainsubelem.subsections[k];
+                        %>
+                        <a href="/<%-mainelem.slug%>/<%-mainsubelem.slug%>/<%-sublink.slug%>" class="introsubsectionslinks" id="introsubsectionslinks<%-sublink.id%>" ><%-sublink.name%></a>
+                        <% } %>
+                    </div>
+                    <% } %>
+                </div>
+                <% } %>
+            </div>
+        <% } %>
+    </div>
+<% } %>
+
+</div>

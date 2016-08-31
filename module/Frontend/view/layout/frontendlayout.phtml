@@ -1,0 +1,142 @@
+<?php
+$env = getenv('APP_ENV') ?: 'production';
+if ($env!=='production') \Application\Infrastructure\Cleaning::clean(); ?>
+<?php echo $this->doctype(); ?>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?php echo $this->headTitle($this->seoInfo()->get('title'))->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?php echo $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+            ->appendName('description', $this->seoInfo()->get('description'))
+            ->appendName('keywords', $this->seoInfo()->get('keywords'))
+        ;
+        ?>
+
+        <?php
+        if ($this->mobileDetect()->isMobile() || $this->mobileDetect()->isTablet()) {
+            /*$this->headLink()
+                ->appendStylesheet($this->basePath() . '/app/css/reset.css')
+                ->appendStylesheet($this->basePath() . '/app/css/mobile.style.css')
+
+                ;
+
+            $this->headScript()
+                ->appendFile($this->basePath() . '/app/js/vendor/require.js')
+                ->appendFile($this->basePath() . '/app/js/vendor/jquery.js')
+
+                ->appendFile($this->basePath() . '/app/js/vendor/underscore.js')
+                ->appendFile($this->basePath() . '/app/js/main/utils.js')
+                ->appendFile($this->basePath() . '/app/js/main/social.js')
+
+                ->appendFile($this->basePath() . '/app/js/main/templates.js')
+                ->appendFile($this->basePath() . '/app/js/main/mobile.main.js');
+
+            ;*/
+
+            $this->headLink()
+                ->appendStylesheet($this->basePath() . '/app/css/stylemobile.css')
+            ;
+
+            $this->headScript()
+                ->appendFile($this->basePath() . '/cache/js/mobilejs.js')
+            ;
+
+
+        } else { //begin desktop
+            /*$this->headLink()
+                ->prependStylesheet($this->basePath() . '/app/css/style.css')
+                ->prependStylesheet($this->basePath() . '/app/css/reset.css')
+                ->prependStylesheet($this->basePath() . '/app/js/vendor/mediaelement/mediaelementplayer.min.css')
+                ->prependStylesheet($this->basePath() . '/app/css/jquery.mCustomScrollbar.css')
+                ->prependStylesheet($this->basePath() . '/app/css/dropit.css')
+                ->appendStylesheet($this->basePath() . '/app/css/kern.css')
+                ->appendStylesheet($this->basePath() . '/app/css/videoplayer1.css')
+
+                ->appendStylesheet($this->basePath() . '/app/css/videoplayer2.css');
+
+
+           /* $this->headScript()
+                ->prependFile($this->basePath() . '/app/js/vendor/jquery.js')
+                ->prependFile($this->basePath() . '/app/js/vendor/underscore.js')
+                ->prependFile($this->basePath() . '/app/js/vendor/require.js')
+                ->appendFile($this->basePath() . '/app/js/main/utils.js')
+                ->appendFile($this->basePath() . '/app/js/main/social.js')
+                ->appendFile($this->basePath() . '/app/js/vendor/jquery.kern.min.js')
+                ->appendFile($this->basePath() . '/app/js/vendor/jquery.mCustomScrollbar.min.js')
+                ->appendFile($this->basePath() . '/app/js/vendor/jquery.mousewheel-3.0.6.min.js')
+                ->appendFile($this->basePath() . '/app/js/vendor/dropit.js')
+                ->appendFile($this->basePath() . '/app/js/main/templates.js')
+                ->appendFile($this->basePath() . '/app/js/vendor/mediaelement/mediaelement-and-player.min.js')
+                ->appendFile($this->basePath() . '/app/js/mediaelement/custom.js')
+                ->appendFile($this->basePath() . '/app/js/main/main.js');*/
+
+
+            $this->headLink()
+                ->appendStylesheet($this->basePath() . '/app/js/vendor/mediaelement/mediaelementplayer.min.css')
+                ->appendStylesheet($this->basePath() . '/app/css/styledesk.css')
+                ->appendStylesheet($this->basePath() . '/app/css/kern.css');
+
+
+
+
+
+            $this->headScript()
+                ->appendFile($this->basePath() . '/cache/js/desktopjs.js');
+            $this->headScript()
+                ->appendFile($this->basePath() . '/app/js/vendor/mediaelement/mediaelement-and-player.min.js');
+            $this->headScript()
+                ->appendFile($this->basePath() . '/app/js/mediaelement/custom.js');
+
+            ?>
+            <script type="text/javascript">
+
+            </script>
+        <?php
+            } //end desktop version
+
+        echo $this->headLink();
+        echo $this->headScript();
+         ?>
+
+
+
+
+
+
+    </head>
+    <body>
+
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+        <noscript>
+            <?php echo $this->menuShow();?>
+            <?php echo $this->content; ?>
+        </noscript>
+        <?php echo $this->inlineScript() ?>
+
+    <!-- Google Analytics -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', '<?php echo $this->seoInfo()->get('analitycs'); ?>', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <!-- End Google Analytics -->
+    </body>
+</html>

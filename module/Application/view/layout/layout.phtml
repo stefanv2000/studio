@@ -1,0 +1,16 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?php echo $this->headTitle()->setSeparator(' - ')->setAutoEscape(false) ?>
+
+    </head>
+    <body>
+        <div class="container">
+            <?php echo $this->content; ?>
+            <hr>
+        </div> <!-- /container -->
+        <?php echo $this->inlineScript() ?>
+    </body>
+</html>

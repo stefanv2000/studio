@@ -1,0 +1,74 @@
+<div >
+
+    <% for (var i=0; i< con.length;i++){
+    var mainelem = con[i];
+    var slug = path+'/'+mainelem.slug;
+    if (i===0) slug = '/'+mainelem.slug;
+    var hasSubsections = false;
+    if ((mainelem.hasOwnProperty('subsections'))&&(mainelem.subsections.length>0)) hasSubsections = true;
+    menutype="link";
+    if (mainelem.slug == 'social') {menutype='social';slug=mainelem.link;}
+    %>
+    <div class="profilemainlinkcontainer" id="profilemainlinkcontainer<%-mainelem.id%>">
+        <div class="profilemainname" id="profilemainname<%-mainelem.id%>" data-id="<%-mainelem.id%>">
+            <a href="<% if (hasSubsections) print('#'); else print(slug); %>" data-slug="<%-slug%>" data-id="<%-mainelem.id%>" class="profilemainnamelink" data-type="<%-menutype%>"
+               id="profilemainnamelink<%-mainelem.id%>">
+                <span><%-mainelem.name%></span>
+            </a>
+            <% if (hasSubsections) { %>
+            <div class="profilemainnametext" id="profilemainnametext<%-mainelem.id%>">
+                <% for (var k=0;k< mainelem.subsections.length;k++) {
+                var sublink = mainelem.subsections[k];
+                %>
+                <a href="<%-slug%>/<%-sublink.slug%>" data-slug="<%-slug%>/<%-sublink.slug%>"
+                   class="profileintrosubsectionslinks" id="profileintrosubsectionslinks<%-sublink.id%>"><%-sublink.name%></a>
+                <% } %>
+            </div>
+            <% } %>
+        </div>
+    </div>
+
+    <% } %>
+    <div class="moreprofessionals">
+    <% if (more.length>0) {%>
+
+    <a href="#" class="profilemorebutton" id="profilemorebutton"><span>more</span> <img src="/images/04_menu_small_arrow.svg" /></a>
+
+    <% } %>
+    </div>
+    <div class="profileinfoholder">
+    <div class="containershowmoreprofessionals">
+
+    <div class="showmoreprofessionals">
+    <% for (var i=0; i< more.length;i++){
+        var elemMore = more[i];
+        %>
+        <div class="otherprofessional">
+            <a href="/<%-elemMore.path%>/<%-elemMore.slug%>" class="otherprofessionallink"><%-elemMore.name%></a>
+            </div>
+    <% } %>
+
+        </div>
+        </div>
+
+    <% if ((firstpage!='')&&(firstpage!=null)) {%>
+    <div class="bioprofilecontainer">
+        <% if (firstpage.image!=''){ %>
+        <div class="bioprofileimagecontainer" data-width="<%-firstpage.image.imageWidth%>" data-height="<%-firstpage.image.imageHeight%>">
+        </div>
+        <% } %>
+
+        <% if (firstpage.text!=''){ %>
+        <div class="bioprofiletextcontainer" >
+            <div class="bioprofilecontainerscrollable">
+                <div class="bioprofiletextcontent">
+                    <%=firstpage.text%>
+                </div>
+            </div>
+        </div>
+        <% } %>
+    </div>
+    <% } %>
+        </div>
+
+</div>

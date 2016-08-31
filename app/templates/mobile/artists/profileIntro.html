@@ -1,0 +1,23 @@
+<div>
+
+
+    <% if ((firstpage!='')&&(firstpage!=null)) {%>
+    <div class="bioprofilecontainer">
+        <% if (firstpage.image!=''){ %>
+        <div class="bioprofileimagecontainer" data-width="<%-firstpage.image.imageWidth%>" data-height="<%-firstpage.image.imageHeight%>">
+        </div>
+        <% } %>
+
+        <% if (firstpage.text!=''){ %>
+        <div class="bioprofiletextcontainer" >
+            <div class="bioprofilecontainerscrollable">
+                <div class="bioprofiletextcontent">
+                    <%=firstpage.text%>
+                </div>
+            </div>
+        </div>
+        <% } %>
+    </div>
+    <% } %>
+
+</div>

@@ -1,0 +1,1 @@
+var menuItems= [{"name":"home","slug":"\/"},{"name":"CONTACT","slug":"\/contact"},{"name":"BECOME A MODEL","slug":"\/become-a-model"}];

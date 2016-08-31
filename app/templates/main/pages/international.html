@@ -1,0 +1,25 @@
+<div class="modelpagemaintitle" id="modelpagemaintitle">
+    <a href="/" class="profilemainnamelink" id="internationaltitle">
+        <span>international</span>
+    </a>
+</div>
+<div id="internationalcontent">
+    <% for (var i=0; i< content.length;i++){
+    var modelelem = content[i];
+    var slug = modelelem.link;
+    %>
+    <div class="modellistcontainer modellistcontainerinternational">
+        <div class="containermodelimagewrap">
+        <div class="containermodelimage">
+            <img src="<%-modelelem.imagepath%>" class="modelimage" data-id="<%modelelem.id%>" data-slug="<%-slug%>" />
+        </div>
+            </div>
+        <div class="containermodelnameinternational">
+            <span><%=modelelem.name%></span>
+            <div class="containermodelnameinternationallist">
+                <%=modelelem.list%>
+                </div>
+        </div>
+    </div>
+    <% } %>
+</div>

@@ -1,0 +1,21 @@
+
+    <h1><a href="<?php use Application\Infrastructure\Utils\Display;
+
+        echo $this->slug;?>"><?php echo Display::formatString($this->name);?></a></h1>
+
+    <?php
+
+    foreach ($this->content as $typesection){
+        if (array_key_exists('subsections',$typesection)&&($this->slug!='food-_-drink')&&($this->slug!='food_drink')&&($this->slug!='influencers')) {
+            ?>
+            <br /><br /><h2><?php echo Display::formatString($typesection['name']);?></h2>
+            <br />
+            <?php  foreach ($typesection['subsections'] as $prefsection) {
+                ?>
+                <a href="<?php echo $this->slug;?>/<?php echo $typesection['slug'];?>/<?php echo $prefsection['slug'];?>"><?php echo Display::formatString($prefsection['name']);?></a>
+                <?php
+            }
+        } else { ?>
+            <a href="<?php echo $this->slug;?>/<?php echo $typesection['slug'];?>"><?php echo Display::formatString($typesection['name']);?></a>
+        <?php       }
+    }   ?>

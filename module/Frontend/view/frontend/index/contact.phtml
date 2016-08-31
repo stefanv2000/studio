@@ -1,0 +1,10 @@
+<?php
+use Application\Infrastructure\Utils\Display;
+
+$this->headTitle()->append(Display::formatString('CONTACT'));
+?>
+<h1>Contact</h1>
+<div><?php echo $this->firsttext; ?></div>
+<?php foreach ($this->texts as $text) { ?>
+    <p><?php echo $text; ?></p>
+<?php } ?>

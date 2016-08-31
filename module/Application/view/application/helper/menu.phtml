@@ -1,0 +1,5 @@
+<nav class="menu">
+<?php foreach ($this->content as $menuitem) { ?>
+    <a href="<?php echo $menuitem['slug']; ?>" ><?php echo $menuitem['name']; ?></a>
+<?php } ?>
+</nav>

@@ -1,0 +1,33 @@
+<div class="modelpagelayoutcontainer">
+    <div class="modelpagetop">
+        <div class="modelpagemaintitle" id="modelpagemaintitle">
+            <a href="<%-links.allmodels%>" class="profilemainnamelink" id="profilemainnamelink<%-con[0].id%>">
+                <span><%-con[0].name%></span>
+            </a>
+        </div>
+        <div class="modelpagelayoutmenucontainer">
+            <% for (var i=1; i< con.length;i++){
+            var menuelem = con[i];
+            var slug = path + '/'+menuelem.slug;
+
+            var menutype="gallery";
+            if (menuelem.description1 == '2') menutype="portfolio_old";
+            if (menuelem.slug == 'social') {
+                menutype = "social";
+                slug=menuelem.link;
+            }
+            %>
+            <a href="<%-slug%>" data-slug="<%-slug%>" data-id="<%-menuelem.id%>" data-type="<%-menutype%>" class="modelpagemenuitem" id="modelpagemenuitem<%-menuelem.id%>"><span><%-menuelem.name%></span></a>
+            <% } %>
+
+            <img src="/images/05_portfolio_menu_line.png" class="menuseparator"/>
+            <a href="<%-links.allmodels%>" class="modelpagemenuitem modelpagemenuitemlinks" id="allmodelslink">all models</a>
+            <img src="/images/05_portfolio_menu_line.png" class="menuseparator"/>
+            <a href="<%-links.previousmodel%>" class="modelpagemenuitem modelpagemenuitemlinks" id="previousmodellink">previous model</a>
+            <a href="<%-links.nextmodel%>" class="modelpagemenuitem modelpagemenuitemlinks" id="nextmodellink">next model</a>
+        </div>
+    </div>
+
+    <div class="modelpagesectincontainer" id="modelpagesectincontainer">
+    </div>
+</div>

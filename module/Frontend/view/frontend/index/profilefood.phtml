@@ -1,0 +1,17 @@
+<?php
+use Application\Infrastructure\Utils\Display;
+
+$this->headTitle()->append(Display::formatString($this->title));
+$this->headTitle()->append(Display::formatString('Profile'));
+?>
+<?php foreach ($this->images as $image){
+    if ($image['contentType']==='video') {?>
+        <video src="<?php echo $image['linkpath'];?>/_media/<?php echo $image['name'];?>" controls></video>
+    <?php } else {
+        ?>
+        <img src="<?php echo $image['linkpath'];?>/_images1/<?php echo $image['name'];?>" alt="<?php echo Display::formatString($this->content[0]['name']);?>" />
+    <?php }
+}?>
+<?php foreach ($this->texts as $text){
+    echo '<div>'.$text['body'].'</div>';
+}?>

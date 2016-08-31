@@ -1,0 +1,11 @@
+<?php
+use Application\Infrastructure\Utils\Display;
+
+$this->headTitle()->append(Display::formatString($this->title));
+
+?>
+    <h1><?php echo Display::formatString($this->title);?></h1>
+
+<h2><?php echo Display::formatString($this->content['header']); ?></h2>
+
+<?php echo $this->content['body']; ?>

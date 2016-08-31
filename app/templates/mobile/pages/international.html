@@ -1,0 +1,27 @@
+<div class="modelpagemaintitle" id="modelpagemaintitle">
+    <a href="/" class="profilemainnamelink  headerfirstlink" id="internationaltitle">
+        <span>international</span>
+    </a>
+    <img src="/images/mobile/15_mobile_portfolio_menu_line.svg" class="menuseparator"/>
+    <a href="/" class="profilemainnamelink" >
+        <span>back</span>
+    </a>
+</div>
+<div id="internationalcontent">
+    <% for (var i=0; i< content.length;i++){
+    var modelelem = content[i];
+    var slug = modelelem.link;
+    %>
+    <div class="modellistcontainer modellistcontainerinternational">
+        <div class="containermodelimage">
+            <img src="<%-modelelem.imagepath%>" class="modelimage" data-id="<%modelelem.id%>" data-slug="<%-slug%>" />
+        </div>
+        <div class="containermodelnameinternational">
+            <span><%=modelelem.name%></span>
+            <div class="containermodelnameinternationallist">
+                <%=modelelem.list%>
+                </div>
+        </div>
+    </div>
+    <% } %>
+</div>

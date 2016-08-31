@@ -1,0 +1,23 @@
+<div class="searchmodelsleft">
+    <input type="text" value="" placeholder="name" id="searchname" class="searchinput"/>
+
+    <% for (var i=0;i< criteriaoptions.length;i++) {
+        var option = criteriaoptions[i];
+        var optionsAr = criteria[option];
+    %>
+    <ul class="searchdropdown">
+        <li>
+            <a href="#" class="mainsearchlink" data-criteria="<%-option%>" data-selectedvalue="" id="mainsearch<%-option%>"><%-option%></a>
+            <ul>
+            <% for (var j=0; j < optionsAr.length;j++) { %>
+                <li><a href="#" class="searchdropdownoption" data-parentid="mainsearch<%-option%>"><%-optionsAr[j]%></a></li>
+                <% } %>
+            </ul>
+        </li>
+    </ul>
+    <% } %>
+
+    </div>
+
+<div class="searchmodelsright">
+    </div>

@@ -1,0 +1,26 @@
+<div class="pageheadercontainer">
+    <a href="/" class="headerfirstlink typelinks typeheaderlinks typesublinks"><%-name%></a>
+    <img src="/images/mobile/15_mobile_portfolio_menu_line.svg" class="menuseparator"/>
+    <a href="/" class="typelinks typeheaderlinks typesublinks">back</a>
+    </div>
+
+<div class="pagetoplinkscontainer">
+<% for (var i=0;i< con.length;i++) {%>
+<a href="<%-slug%>/<%-con[i].slug%>" class="typetoplinks typelinks" id="typetoplinks<%-con[i].id %>" data-id="<%-con[i].id %>"><%-con[i].name %></a>
+<% } %>
+</div>
+
+
+<div class="pagelowerlinkscontainer">
+    <% for (var i=0;i< con.length;i++) {
+    if ((!('subsections' in con[i]))||(con[i].subsections.length<=0)) continue;
+    %>
+    <div class="displaylinkscontainer" id="displaylinkscontainer<%-con[i].id %>">
+        <% for (var j=0;j< con[i].subsections.length;j++) {
+            var subsect = con[i].subsections[j];
+        %>
+        <a href="<%-slug%>/<%-con[i].slug%>/<%-subsect.slug%>" class="typesublinks typelinks" data-id="<%-subsect.id %>"><%-subsect.name %></a>
+        <% } %>
+        </div>
+    <% } %>
+</div>

@@ -1,0 +1,20 @@
+<div class="portfoliothumbnailscontainerscrollable" id="portfoliothumbnailscontainerscrollable">
+    <div class="portfoliothumbnailscontainer" id="portfoliothumbnailscontainer">
+        <div class="thumbnailsseparator"></div><% for (var i=0;i< con.length;i++){
+                var thumbnail = con[i];
+        %><div class="thumbnailcontainer" id="thumbnailcontainer<%-i%>" data-id="<%-thumbnail.id%>" data-index="<%-i%>" data-width="<%-thumbnail.thumbWidth1%>"
+             data-height="<%-thumbnail.thumbHeight1%>" width="<%-thumbnail.thumbWidth1%>"
+               height="<%-thumbnail.thumbHeight1%>" style="height:<%-thumbnail.thumbHeight1%>px;width:<%-thumbnail.thumbWidth1%>px"><img src="<%-thumbnail.linkpath%>/_thumbnails1/<%-thumbnail.thumbname%>" id="thumbnailimage<%-i%>" class="thumbnailimage" data-id="<%-thumbnail.id%>" data-index="<%-i%>" data-width="<%-thumbnail.thumbWidth1%>"
+                                                            data-height="<%-thumbnail.thumbHeight1%>" /></div><% } %><div class="thumbnailsseparator"></div>
+    </div>
+
+</div>
+
+<div class="portfolioimagedisplaycontainer">
+    <div class="portfolioimagecontrols">
+        <div id="nextimagecontrolcontainer"><img src="/images/06_old_portfolio_arrow_1.svg" id="nextimagecontrol" class="imagecontrols"><div id="nextimagecontroldisabled" class="imagecontrolsdisabled"></div></div>
+        <div id="previousimagecontrolcontainer"><img src="/images/07_old_portfolio_arrow_2.svg" id="previousimagecontrol" class="imagecontrols"><div id="previousimagecontroldisabled" class="imagecontrolsdisabled"></div></div>
+    </div>
+    <div class="portfolioimagecontainer">
+    </div>
+</div>

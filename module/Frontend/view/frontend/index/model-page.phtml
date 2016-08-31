@@ -1,0 +1,17 @@
+<?php
+use Application\Infrastructure\Utils\Display;
+
+$this->headTitle()->append(Display::formatString($this->title));
+?>
+
+<h1><?php echo Display::formatString($this->title);?></h1>
+<?php for ($i=1;$i<count($this->content);$i++){  $category=$this->content[$i];
+    if ($category['slug'] === 'social') $category['slug']=$category['link'];
+    ?>
+    <a href="<?php echo $this->path; ?>/<?php echo $category['slug']; ?>"><?php echo Display::formatString($category['name']); ?></a>
+<?php } ?>
+
+<?php foreach ($this->links as $key => $category){ if ($category==='') continue; ?>
+    <a href="<?php echo $category; ?>"><?php echo Display::formatString($key); ?></a>
+<?php } ?>
+

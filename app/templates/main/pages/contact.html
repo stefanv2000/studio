@@ -1,0 +1,27 @@
+
+<div class="modelpagemaintitle" id="modelpagemaintitle">
+    <a href="/" class="profilemainnamelink contactmainlink" id="contacttitle">
+        <span>contact</span>
+    </a>
+</div>
+<div id="contactcontent">
+
+    <% if (content.firsttext!=''){ %>
+    <div class="contactfirsttext">
+        <%=content.firsttext%>
+        </div>
+    <% } %>
+    <div class="contacttextscontainer">
+        <% for (var i=0;i< content.texts.length;i++){
+            if (content.texts[i]=='') continue;
+        %>
+        <div class="contacttextwrapper">
+            <%=content.texts[i]%>
+        </div>
+        <% } %>
+        </div>
+
+    <div class="facebooklikecontainer" id="facebooklikecontainer">
+    <div class="fb-like" data-href="http:// studiogroup.com/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+        </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="listcategorymaincontainer">
+
+    <% for (var i=0; i< con.length;i++){
+    var modelelem = con[i];
+    var slug = path+'/'+modelelem.slug;
+    %>
+    <div class="modellistcontainer">
+        <div class="containermodelimage">
+            <img src="<%-modelelem.imagepath%>" class="modelimage" data-id="<%modelelem.id%>" data-slug="<%-slug%>" />
+        </div>
+        <div class="containermodelname">
+            <a href="<%-slug%>" class="modellink" data-id="<%modelelem.id%>" data-slug="<%-slug%>"><span><%-modelelem.name%></span></a>
+        </div>
+    </div>
+    <% } %>
+</div>

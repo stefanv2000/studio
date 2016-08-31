@@ -1,0 +1,81 @@
+<div class="becomeimagecontainer">
+    <img src="<?php echo $this->content['image']; ?>" class="becomeimageinner"/>
+</div>
+
+<div class="becomeformcontainer">
+    <?php
+    echo $this->form()->openTag($form);
+    ?>
+    <div class="leftformbecomemodel">
+        <div class="formbecomemodellegend">name</div>
+        <?php echo $this->formElement($form->get('name')); ?>
+
+        <div class="formbecomemodellegend">age</div>
+        <?php echo $this->formElement($form->get('age')); ?>
+
+        <div class="formbecomemodellegend">phone</div>
+        <?php echo $this->formElement($form->get('phone')); ?>
+
+        <div class="formbecomemodellegend">email</div>
+        <?php echo $this->formElement($form->get('email')); ?>
+
+        <div class="formbecomemodellegend">country</div>
+        <?php echo $this->formElement($form->get('country')); ?>
+
+        <div class="formbecomemodellegend wheredidyoufindlabel">where did you find out about us?</div>
+        <?php echo $this->formElement($form->get('wheredidyoufind')); ?>
+
+        <div class="formbecomemodellegend requirementstextcontainer">
+            <?php echo $this->content['requirements']; ?>
+        </div>
+        <div class="becomeamodelline"></div>
+        <div class="becomemodellinkscontainer attachphotolinkscontainer">
+            <a href="#" id="attachphoto" class="becomemodellinks">attach a photo</a>
+            <div class="imagenameholder"></div>
+        </div>
+        <div class="becomemodellinkscontainer sendformlinkscontainer">
+<div class="confirmmessagesend"></div>
+            <a href="#" id="sendform" class="becomemodellinks">send</a>
+        </div>
+        <?php echo $this->formElement($form->get('filelist')); ?>
+    </div>
+
+    <div class="rightformbecomemodel">
+
+        <div class="formbecomemodellegend">height</div>
+        <?php echo $this->formElement($form->get('height')); ?>
+
+        <div class="formbecomemodellegend">bust</div>
+        <?php echo $this->formElement($form->get('bust')); ?>
+
+        <div class="formbecomemodellegend">waist</div>
+        <?php echo $this->formElement($form->get('waist')); ?>
+
+        <div class="formbecomemodellegend">hips</div>
+        <?php echo $this->formElement($form->get('hips')); ?>
+
+        <div class="formbecomemodellegend">dress</div>
+        <?php echo $this->formElement($form->get('dress')); ?>
+
+        <div class="formbecomemodellegend">shoe</div>
+        <?php echo $this->formElement($form->get('shoe')); ?>
+
+        <div class="formbecomemodellegend">hair colour</div>
+        <?php echo $this->formElement($form->get('haircolour')); ?>
+
+        <div class="formbecomemodellegend">eye colour</div>
+        <?php echo $this->formElement($form->get('eyecolour')); ?>
+
+        <div class="formbecomemodellegend">shirt</div>
+        <?php echo $this->formElement($form->get('shirt')); ?>
+
+        <div class="formbecomemodellegend">suit</div>
+        <?php echo $this->formElement($form->get('suit')); ?>
+
+        <div class="formbecomemodellegend">inseam</div>
+        <?php echo $this->formElement($form->get('inseam')); ?>
+    </div>
+
+    <?php echo $this->form()->closeTag($form);
+    ?>
+</div>

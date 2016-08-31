@@ -1,0 +1,27 @@
+<div class="modelscategorylayoutcontainer">
+    <div class="modelscategorytop">
+        <div class="modelscategorymaintitle" id="modelscategorymaintitle">
+            <a href="#" class="modelscategorymainnamelink  headerfirstlink" id="modelscategoryemainnamelink">
+                <span>models</span>
+            </a>
+            <img src="/images/mobile/15_mobile_portfolio_menu_line.svg" class="menuseparator"/>
+            <a href="#" class="modelscategorymainnamelink" >
+                <span>back</span>
+            </a>
+        </div>
+        <div class="modelscategorylayoutmenucontainer">
+            <% for (var i=0; i< con.length;i++){
+            var menuelem = con[i];
+            var slug = path+'/'+menuelem.slug;
+            var menutype='category';
+            %>
+            <a href="<%-slug%>" data-slug="<%-slug%>" data-id="<%-menuelem.id%>" data-type="<%-menutype%>" class="modelscategorymenuitem" id="modelscategorymenuitem<%-menuelem.id%>"><span><%-menuelem.name%></span></a>
+            <% } %>
+
+
+        </div>
+    </div>
+
+    <div class="modelscategorysectincontainer" id="modelscategorysectincontainer">
+    </div>
+</div>

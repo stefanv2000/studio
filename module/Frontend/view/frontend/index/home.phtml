@@ -1,0 +1,22 @@
+<?php use Application\Infrastructure\Utils\Display;
+
+foreach ($this->content as $mainsection) { ?>
+    <h1><a href="<?php echo $mainsection['slug'];?>"><?php echo Display::formatString($mainsection['name']);?></a></h1>
+    <p><?php echo $mainsection['text'];?></p>
+    <?php if (!array_key_exists('subsections',$mainsection)) continue;
+
+        foreach ($mainsection['subsections'] as $typesection){
+            if (array_key_exists('subsections',$typesection)&&($mainsection['slug']!='food-_-drink')&&($mainsection['slug']!='food_drink')&&($mainsection['slug']!='influencers')) {
+            ?>
+                <br /><br /><h2><?php echo Display::formatString($typesection['name']);?></h2>
+                <br />
+    <?php  foreach ($typesection['subsections'] as $prefsection) {
+                ?>
+                    <a href="/<?php echo $mainsection['slug'];?>/<?php echo $typesection['slug'];?>/<?php echo $prefsection['slug'];?>"><?php echo Display::formatString($prefsection['name']);?></a>
+                <?php
+                }
+            } else { ?>
+                <a href="/<?php echo $mainsection['slug'];?>/<?php echo $typesection['slug'];?>"><?php echo Display::formatString($typesection['name']);?></a>
+    <?php       }
+            }   ?>
+<?php } ?>

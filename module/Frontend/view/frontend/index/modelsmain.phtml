@@ -1,0 +1,11 @@
+<?php
+use Application\Infrastructure\Utils\Display;
+
+$this->headTitle()->append(Display::formatString('MODELS'));
+?>
+
+<h1>Models</h1>
+<?php foreach ($this->content as $category){ ?>
+    <a href="<?php echo $this->path; ?>/<?php echo $category['slug']; ?>"><?php echo Display::formatString($category['name']); ?></a>
+    <?php } ?>
+

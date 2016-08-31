@@ -1,0 +1,6 @@
+<div class="imageprofile"><% for (var i=0;i< model.images.length;i++){ %>
+    <img src="<%=model.images[i].linkpath%>/_thumbnails2/<%=model.images[i].name%>" class="imagesprofile" id="imageprofile<%-model.images[i].id%>"/><br />
+    <% } %></div>
+<div class="contentprofile"><% for (var i=0;i< model.texts.length;i++){ %>
+    <%=model.texts[i].body%>
+    <% } %></div>

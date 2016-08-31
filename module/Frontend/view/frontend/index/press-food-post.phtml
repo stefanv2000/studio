@@ -1,0 +1,27 @@
+<?php
+use Application\Infrastructure\Utils\Display;
+
+$this->headTitle()->append(Display::formatString($this->title));
+
+?>
+    <h1><?php echo Display::formatString($this->title);?></h1>
+
+<?php foreach ($this->content as $image){
+    if ($image['contentType']==='video') {?>
+        <video src="<?php echo $image['linkpath'];?>/_media/<?php echo $image['name'];?>" controls></video>
+        <br />
+    <?php } else
+        if ($image['contentType']==='vimeo') {?>
+            <iframe src="//player.vimeo.com/video/<?php echo $image['link'];?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <?php } else
+            if ($image['contentType']==='youtube') {?>
+                <iframe src="http://www.youtube.com/embed/<?php echo $image['link'];?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <?php } else {   ?>
+                <img src="<?php echo $image['linkpath'];?>/_images1/<?php echo $image['name'];?>" alt="<?php echo $this->title;?>" />
+                <br />
+            <?php }
+    if ($image['caption1']!=='') {
+        ?>
+        <p><?php echo Display::formatString($image['caption1']);?></p>
+    <?php }
+}?>

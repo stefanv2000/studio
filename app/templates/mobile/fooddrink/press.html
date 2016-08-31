@@ -1,0 +1,9 @@
+<div class="portfoliomaingalleryscrollable">
+    <div class="portfoliomaingallerycontainer"><% for (var i=0;i< con.length;i++){
+        var image = con[i];     %>
+        <div class="mainpressimagecontainer" data-slug="<%-image.slug%>">
+            <img src="<%-image.imagepath%>" id="pressgalleryimage<%-i%>" class="pressgalleryimage" data-id="<%-image.id%>" data-index="<%-i%>"
+                  />
+        </div>
+        <% } %></div>
+</div>

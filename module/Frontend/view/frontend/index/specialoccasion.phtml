@@ -1,0 +1,17 @@
+<?php
+use Application\Infrastructure\Utils\Display;
+
+$this->headTitle()->append(Display::formatString('SPECIAL OCCASION'));
+?>
+<h1>Special occasion</h1>
+<p><?php echo $this->text;?></p>
+<?php foreach ($this->content as $professional){
+
+    ?>
+    <a href="<?php echo $professional['link']; ?>">
+        <?php if (array_key_exists('imagepath',$professional)) {?>
+            <img src="<?php echo $professional['imagepath'];?>" /><br />
+        <?php } ?>
+        <?php echo Display::formatString($professional['name']); ?><br />
+    </a>
+<?php } ?>

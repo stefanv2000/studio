@@ -1,0 +1,20 @@
+<div id="logomenucontainer"><a href="/" class="logolink"><img src="/images/03_intro_logo_b.svg" class="logo studiogroup"><img src="/images/12_models_logo_b.svg" class="logomodels"></a></div>
+<div id="rightmenucontainer">
+<div id="linksmenucontainer">
+    <% for (var i=0;i< menulinks.length;i++){ %>
+        <a href="<%-menulinks[i].slug%>" class="linkmenu"><%-menulinks[i].name%></a>
+    <% } %>
+
+    <input class="inputclass menuinput" id="inputmenusearch" placeholder="SEARCH"/>
+</div>
+<div id="socialmenucontainer">
+    <% for (var i=0;i< sociallinks.length;i++){ %>
+    <div class="socialiconsmenu" id="<%=sociallinks[i].id%>" data-link="<%=sociallinks[i].link%>">
+        <a href="<%=sociallinks[i].link%>" target="_blank"></a>
+    </div>
+    <% } %>
+</div>
+    </div>
+<div class="searchcontentholder">
+
+</div>

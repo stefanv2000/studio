@@ -1,0 +1,19 @@
+<?php
+use Application\Infrastructure\Utils\Display;
+
+$this->headTitle()->append(Display::formatString('INTERNATIONAL'));
+?>
+<h1>International</h1>
+<?php
+
+foreach ($this->content as $model){
+
+    ?>
+    <a href="<?php echo $model['link']; ?>">
+        <?php if (array_key_exists('imagepath',$model)) {?>
+            <img src="<?php echo $model['imagepath'];?>" /><br />
+        <?php } ?>
+        <?php echo $model['name']; ?><br />
+    </a>
+    <p><?php echo $model['list']; ?></p>
+<?php } ?>

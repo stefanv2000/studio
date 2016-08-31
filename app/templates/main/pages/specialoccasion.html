@@ -1,0 +1,23 @@
+<div class="modelpagemaintitle" id="modelpagemaintitle">
+    <a href="/" class="profilemainnamelink specialoccasionmainlink" id="specialoccasiontitle">
+        <span>special occasion</span>
+    </a>
+</div>
+<div class="specialoccasiontext"><%=text%></div>
+<div id="specialoccasioncontent">
+    <% for (var i=0; i< content.length;i++){
+    var modelelem = content[i];
+    var slug = modelelem.link;
+    %>
+    <div class="modellistcontainer">
+        <div class="containermodelimagewrap">
+        <div class="containermodelimage">
+            <img src="<%-modelelem.imagepath%>" class="modelimage" data-id="<%modelelem.id%>" data-slug="<%-slug%>" />
+        </div>
+            </div>
+        <div class="containermodelname">
+            <a href="<%-slug%>" class="modellink" data-id="<%modelelem.id%>" data-slug="<%-slug%>"><span><%-modelelem.name%></span></a>
+        </div>
+    </div>
+    <% } %>
+</div>

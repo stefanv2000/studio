@@ -1,0 +1,39 @@
+
+<?php
+use Application\Infrastructure\Utils\Display;
+
+$this->headTitle()->append(Display::formatString($this->title));
+$this->headTitle()->append(Display::formatString($this->type));
+?>
+
+<h1><?php echo Display::formatString($this->content[0]['name']);?></h1>
+<a href="<?php echo $this->content[0]['slug'];?>"><?php echo Display::formatString($this->sectiontype);?></a>
+<?php
+ for ($i=1;$i<count($this->content);$i++){
+     $mainsect = $this->content[$i];
+     if ($mainsect['slug'] === 'social') continue;
+     if (array_key_exists('subsections',$mainsect)){ ?>
+         <p><?php echo Display::formatString($mainsect['name']);?></p>
+     <?php foreach ($mainsect['subsections'] as $subsection) {?>
+             <a href="<?php echo $this->path;?>/<?php echo $mainsect['slug'];?>/<?php echo $subsection['slug'];?>"><?php echo Display::formatString($subsection['name']);?></a>
+         <?php } ?> <br /><?php
+     } else { ?>
+         <a href="<?php echo $this->path;?>/<?php echo $mainsect['slug'];?>"><?php echo Display::formatString($mainsect['name']);?></a><br \>
+     <?php }
+ }
+?>
+
+<?php if ($this->firstpage!=null) { ?>
+    <?php if ($this->firstpage['image']!='') {
+        if ($this->firstpage['image']['contentType']==='video') {?>
+            <video src="<?php echo $this->firstpage['image']['linkpath'];?>_media/<?php echo $this->firstpage['image']['name'];?>" ></video>
+        <?php } else {
+        ?>
+        <img src="<?php echo $this->firstpage['image']['linkpath'];?>_images1/<?php echo $this->firstpage['image']['name'];?>" alt="<?php echo Display::formatString($this->content[0]['name']);?>" />
+    <?php }
+        } ?>
+
+    <?php if ($this->firstpage['text']!='') { ?>
+        <p><?php echo $this->firstpage['text'];?></p>
+    <?php } ?>
+<?php } ?>
